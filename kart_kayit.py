@@ -51,7 +51,7 @@ try:
     lcd.blink(True)
     ogrenci_bol = input("Bolum giriniz: ")
 
-    cursor.execute(sql_insert, (new_name, ogrenci_sin, ogrenci_bol, id))
+    cursor.execute(sql_insert, (new_name, id, ogrenci_sin, ogrenci_bol))
 
     db.commit()
     
