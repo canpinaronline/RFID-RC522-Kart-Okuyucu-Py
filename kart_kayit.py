@@ -27,6 +27,7 @@ try:
 
     if cursor.rowcount >= 1:
       lcd.clear()
+      lcd.blink(True)
       lcd.message("Mevcut kartın ustune yaz?")
       overwrite = input("Onay: (Y/N)? ")
       if overwrite[0] == 'Y' or overwrite[0] == 'y':
@@ -39,12 +40,15 @@ try:
     else:
       sql_insert = "INSERT INTO users (name, rfid_uid, ogr_sin, ogr_bol) VALUES (%s, %s, %s, %s)" #Veritabanındaki kolon isimleri buraya yazılacak.
     lcd.clear()
+    lcd.blink(True)
     lcd.message('Isim giriniz: ')
     new_name = input("Isim: ")
     lcd.clear()
+    lcd.blink(True)
     lcd.message("Sinif giriniz: ")
     ogrenci_sin = input("Sınıf: ")
     lcd.clear()
+    lcd.blink(True)
     ogrenci_bol = input("Bolum giriniz: ")
 
     cursor.execute(sql_insert, (new_name, ogrenci_sin, ogrenci_bol, id))
