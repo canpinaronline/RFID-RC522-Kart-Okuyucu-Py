@@ -90,12 +90,12 @@ create table tbl_admin(
  
  **Veritabanına örnek öğrencileri kayıt edelim.**
  python3 yoklamasistemi/rfidpy/kart_kayit.py
- 
  RFID kartımızı okutalım.
- **Örnek yoklama alalım.**
+ 
+**Örnek yoklama alalım.**
   python3 yoklamasistemi/rfidpy/yoklama_kayit.py
 
- **Veritabanını kontrol edelim
+**Veritabanını kontrol edelim
 
 
  
