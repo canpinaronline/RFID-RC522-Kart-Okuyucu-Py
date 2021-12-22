@@ -12,14 +12,6 @@ db = mysql.connector.connect(
   database="yoklamasistemi"
 )
 
-def blink(pin):
-	GPIO.output(pin,GPIO.HIGH)
-	time.sleep(1)
-	GPIO.output(pin,GPIO.LOW)
-	time.sleep(1)
-	return
-
-
 
 cursor = db.cursor()
 reader = SimpleMFRC522()
@@ -38,9 +30,6 @@ try:
     lcd.clear()
 
     if cursor.rowcount >= 1:
-      GPIO.setmode(GPIO.BOARD)
-      GPIO.setup(32, GPIO.OUT)
-      blink(32)
       lcd.message("Hosgeldin " + result[1])
       cursor.execute("INSERT INTO attendance (user_id) VALUES (%s)", (result[0],) )
       db.commit()
