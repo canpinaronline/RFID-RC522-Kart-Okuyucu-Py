@@ -124,5 +124,6 @@ SELECT * FROM USERS;
 sudo git clone https://github.com/canpinaronline/rfidfe.git /var/www/html/yoklamasistemi
 
 **Web sunucumuza giriş yapalım.**
+Cihazın ip adresini öğrenmek için ip -4 addr komutunu terminale yazıyorum. Terminaldeki ipv4 adresi ile yerel sunucuma giriş yapıyorum.
 **Localde çalıştığı için Raspbbery PI cihazımın IP adresiyle giriş yapıyorum.**
 
