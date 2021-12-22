@@ -13,6 +13,13 @@ db = mysql.connector.connect(
   database="yoklamasistemi"
 )
 
+def blink(pin):
+	GPIO.output(pin,GPIO.HIGH)
+	time.sleep(1)
+	GPIO.output(pin,GPIO.LOW)
+	time.sleep(1)
+	return
+
 cursor = db.cursor()
 reader = SimpleMFRC522()
 lcd = LCD.Adafruit_CharLCD(4, 24, 23, 17, 18, 22, 16, 2, 4);
@@ -54,8 +61,11 @@ try:
     cursor.execute(sql_insert, (new_name, ogrenci_sin, ogrenci_bol, id))
 
     db.commit()
-
+    
     lcd.clear()
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(32, GPIO.OUT)
+    blink(32)
     lcd.message("Ogrenci " + new_name + "\nkaydedildi.")
     time.sleep(2)
 finally:
