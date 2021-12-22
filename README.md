@@ -3,7 +3,7 @@
 Lang:Py
 rfid rc522 card register and attendance with SPI
 
-**LCD Lib**
+**Raspbbery Pi GPIO kurulmunu yapalım**
 -sudo pip3 install RPi.GPIO
 
 **SPI Aktif et.**
