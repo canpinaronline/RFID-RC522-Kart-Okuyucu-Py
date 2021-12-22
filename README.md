@@ -58,8 +58,8 @@ create table users(
    rfid_uid VARCHAR(255) NOT NULL,
    name VARCHAR(255) NOT NULL,
    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-   ogr_sin VARCHAR(1) NOT NULL,
-   ogr_bol VARCHAR(5) NOT NULL,
+   ogr_sin VARCHAR(255) NOT NULL,
+   ogr_bol VARCHAR(255) NOT NULL,
    PRIMARY KEY ( id )
 );
 
@@ -70,7 +70,7 @@ create table tbl_admin(
   PRIMARY KEY ( id )  
  ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
  
- INSERT INTO `users` (`id`, `username`, `password`) VALUES  
+ INSERT INTO tbl_admin (`id`, `username`, `password`) VALUES  
  (1, 'admin', 'admin');  
  
  
