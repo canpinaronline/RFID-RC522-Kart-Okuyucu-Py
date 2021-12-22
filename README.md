@@ -58,12 +58,44 @@ create table users(
    rfid_uid VARCHAR(255) NOT NULL,
    name VARCHAR(255) NOT NULL,
    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   ogr_sin VARCHAR(1) NOT NULL,
+   ogr_bol VARCHAR(5) NOT NULL,
    PRIMARY KEY ( id )
 );
 
-CREATE TABLE IF NOT EXISTS `users` (  
-  `id` int(11) NOT NULL AUTO_INCREMENT,  
-  `username` varchar(250) NOT NULL,  
-  `password` varchar(250) NOT NULL,  
-  PRIMARY KEY (`id`)  
+create table tbl_admin(  
+  id INT(11) NOT NULL,  
+  username varchar(250) NOT NULL,  
+  password varchar(250) NOT NULL,  
+  PRIMARY KEY ( id )  
  ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+ 
+ INSERT INTO `users` (`id`, `username`, `password`) VALUES  
+ (1, 'admin', 'admin');  
+ 
+ 
+ **Veritabanına öğrenci kayıt et.**
+ 
+ -Scriptte ihtiyacımız olan mysql connector pip aracılığıyla kuralım.
+ sudo pip3 install mysql-connector-python
+ 
+ -Boş bir klasör oluşturalım.
+ 
+ mkdir ~/yoklamasistemi
+ 
+ Script dosyalrını githubtan çekelim.
+ 
+ git clone https://github.com/canpinaronline/rfidpy.git
+ 
+ 
+ **Veritabanına örnek öğrencileri kayıt edelim.**
+ python3 yoklamasistemi/rfidpy/kart_kayit.py
+ 
+ RFID kartımızı okutalım.
+ **Örnek yoklama alalım.**
+  python3 yoklamasistemi/rfidpy/yoklama_kayit.py
+
+ **Veritabanını kontrol edelim
+
+
+ 
