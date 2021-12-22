@@ -85,7 +85,7 @@ create table tbl_admin(
  
  Script dosyalrını githubtan çekelim.
  
- git clone https://github.com/canpinaronline/rfidpy.git
+ sudo git clone https://github.com/canpinaronline/rfidpy.git
  
  
  **Veritabanına örnek öğrencileri kayıt edelim.**
@@ -95,7 +95,34 @@ create table tbl_admin(
 **Örnek yoklama alalım.**
   python3 yoklamasistemi/rfidpy/yoklama_kayit.py
 
-**Veritabanını kontrol edelim
+**Veritabanını kontrol edelim**
+Root olarak giriş yapalım.
 
+sudo mysql -u root -p
+use yoklamasistemi;
 
+**Sisteme kayıtlı kullanıcıları görüntüleyelim.**
+SELECT * FROM USERS;
++--+------------------+---------+------------------------+
+| id | rfid_uid       | name    | created                |
++--+------------------+---------+------------------------+
+|  1 | 496840744001   | Testing User   | 2021-12-22 22:34:06    |
++--+------------------+---------+------------------------+
+
+**Yoklama listesini görelim.**
+ SELECT * FROM attendance;
  
+ 
+ Raspbbery Pi üzerine apache sunucusunu ve php7'yi kuralım.
+ 
+ **Local web sunucu dosyalarının bulunduğu dizine yeni klasör oluşturalım.**
+ 
+ sudo  mkdir /var/www/html/yoklamasistemi
+ 
+**Daha önce hazırladığım ayarlamaları yaptığım dosyaları github üzerinden çekiyorum.**
+
+sudo git clone https://github.com/canpinaronline/rfidfe.git /var/www/html/yoklamasistemi
+
+**Web sunucumuza giriş yapalım.**
+**Localde çalıştığı için Raspbbery PI cihazımın IP adresiyle giriş yapıyorum.**
+
